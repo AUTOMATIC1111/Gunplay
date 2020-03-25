@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <GunplayTitle>Gunplay</GunplayTitle>
+
+  <GunplayEnableTrailsName>発射物の表示を許可</GunplayEnableTrailsName>
+  <GunplayEnableTrailsDesc>発射体(弾や矢)が目標へ飛んでいく軌跡を描画します。</GunplayEnableTrailsDesc>
+  <GunplayEnableSoundsName>効果音を許可</GunplayEnableSoundsName>
+  <GunplayEnableSoundsDesc>いくつかの武器のために射撃音と発射体が命中する音を変更します。ゲームを再起動する必要な場合があります。</GunplayEnableSoundsDesc>
+  <GunplayEnableWeaponAnimationsName>武器のアニメを有効</GunplayEnableWeaponAnimationsName>
+  <GunplayEnableWeaponAnimationsDesc>ガトリングや弓のような武器の挙動をアニメ化したり、目標を外したポーンの持つ武器の動きなどもアニメ化します。</GunplayEnableWeaponAnimationsDesc>
+  <GunplayEnableEffectsName>視覚効果を有効</GunplayEnableEffectsName>
+  <GunplayEnableEffectsDesc>目標に影響する発射体の視覚的な効果を表示します。</GunplayEnableEffectsDesc>
+  <GunplayProjectileSpeedName>発射体速度</GunplayProjectileSpeedName>
+  <GunplayProjectileSpeedDesc>全種類の発射体の飛翔速度を指定したパーセンテージに変更します。</GunplayProjectileSpeedDesc>
+
+</LanguageData>
