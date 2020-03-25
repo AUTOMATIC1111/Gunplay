@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <GunplayTitle>Gunplay</GunplayTitle>
+  
+  <GunplayEnableTrailsName>Enable trails</GunplayEnableTrailsName>
+  <GunplayEnableTrailsDesc>Draw long trails for projectiles.</GunplayEnableTrailsDesc>
+  <GunplayEnableSoundsName>Enable sounds</GunplayEnableSoundsName>
+  <GunplayEnableSoundsDesc>Change fire and projectile impact sounds for some weapons. May require restart.</GunplayEnableSoundsDesc>
+  <GunplayEnableWeaponAnimationsName>Enable weapon animations</GunplayEnableWeaponAnimationsName>
+  <GunplayEnableWeaponAnimationsDesc>Animate weapons like miniguns and bows, and also animate weapon movement for pawns missing their targets.</GunplayEnableWeaponAnimationsDesc>
+  <GunplayEnableEffectsName>Enable effects</GunplayEnableEffectsName>
+  <GunplayEnableEffectsDesc>Show visual effects for projectiles impacting targets.</GunplayEnableEffectsDesc>
+  <GunplayProjectileSpeedName>Projectile speed</GunplayProjectileSpeedName>
+  <GunplayProjectileSpeedDesc>Alter speed to specified percentage for all projectiles.</GunplayProjectileSpeedDesc>
+</LanguageData>

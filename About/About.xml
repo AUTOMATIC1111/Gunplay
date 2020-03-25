@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Gunplay</name>
+	<author>AUTOMATIC</author>
+	<supportedVersions><li>1.1</li></supportedVersions>
+	<packageId>automatic.gunplay</packageId>
+	<description><![CDATA[Adds more cinematic effects to ranged weapons:
+- long trails for projectiles
+- weapon animations for miniguns and bows
+- projectiles comes from thew barrel of the gun and not from inside of the colonist.
+- weapon movement animation for pawns missing their targets
+- different sounds for some weapons
+- visual effects for particle collision
+- faster projectile speed for all projectiles
+
+You can choose which changes you want in mod settings.
+]]></description>
+</ModMetaData>

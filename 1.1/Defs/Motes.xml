@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef Name="GunplayMoteBase" Abstract="True">
+    <thingClass>MoteThrown</thingClass>
+    <label>Mote</label>
+    <category>Mote</category>
+    <graphicData>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <isSaveable>false</isSaveable>
+    <rotatable>false</rotatable>
+  </ThingDef>
+
+  <ThingDef Name="GunplayMoteArrowSpinning" ParentName="GunplayMoteBase">
+    <defName>GunplayMoteArrowSpinning</defName>
+    <graphicData>
+      <texPath>Gunplay/Effects/Arrow</texPath>
+    </graphicData>
+    <mote>
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>0.15</solidTime>
+      <fadeOutTime>0.55</fadeOutTime>
+      <collide>true</collide>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="GunplayMoteArrowSpinning">
+    <defName>GunplayMoteArrowSpinningShortlived</defName>
+    <mote>
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>0.1</solidTime>
+      <fadeOutTime>0.1</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="GunplayMoteBase">
+    <defName>GunplayMoteArrowStuck</defName>
+    <graphicData>
+      <texPath>Gunplay/Effects/Arrow</texPath>
+    </graphicData>
+    <mote>
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>2.0</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+   </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="GunplayMoteBase">
+    <defName>GunplayWoodDebrisA</defName>
+    <graphicData><texPath>Gunplay/Effects/WoodDebris/1</texPath></graphicData>
+    <mote><fadeInTime>0.02</fadeInTime><solidTime>0.25</solidTime><fadeOutTime>0.15</fadeOutTime></mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="GunplayMoteBase">
+    <defName>GunplayWoodDebrisB</defName>
+    <graphicData><texPath>Gunplay/Effects/WoodDebris/2</texPath></graphicData>
+    <mote><fadeInTime>0.02</fadeInTime><solidTime>0.25</solidTime><fadeOutTime>0.15</fadeOutTime></mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="GunplayMoteBase">
+    <defName>GunplayWoodDebrisC</defName>
+    <graphicData><texPath>Gunplay/Effects/WoodDebris/3</texPath></graphicData>
+    <mote><fadeInTime>0.02</fadeInTime><solidTime>0.25</solidTime><fadeOutTime>0.15</fadeOutTime></mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="GunplayMoteBase">
+    <defName>GunplayWoodDebrisD</defName>
+    <graphicData><texPath>Gunplay/Effects/WoodDebris/4</texPath></graphicData>
+    <mote><fadeInTime>0.02</fadeInTime><solidTime>0.25</solidTime><fadeOutTime>0.15</fadeOutTime></mote>
+  </ThingDef>
+  
+</Defs>
