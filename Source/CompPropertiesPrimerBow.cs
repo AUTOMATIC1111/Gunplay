@@ -12,5 +12,7 @@ namespace Gunplay
         public CompPropertiesPrimerBow() { compClass = typeof(CompPrimerBow); }
 
         public GraphicData graphicData;
+        public float stretchHorizontal = 0.45f;
+        public float stretchVertical = -0.25f;
     }
 }

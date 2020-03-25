@@ -341,7 +341,6 @@
     <Compile Include="GunplaySettingsHelper.cs" />
     <Compile Include="GunplaySetup.cs" />
     <Compile Include="MaterialKind.cs" />
-    <Compile Include="Patch\PatchImpactSoundUtility.cs" />
     <Compile Include="Patch\PatchPawnRenderer.cs" />
     <Compile Include="Patch\PatchProjectile.cs" />
     <Compile Include="ProjectileImpactEffectDef.cs" />

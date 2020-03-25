@@ -61,11 +61,15 @@ namespace Gunplay
 
         public static GunPropDef GunProp(ThingDef equipment)
         {
+            if (equipment == null) return null;
+
             return propMap.TryGetValue(equipment, defaultDef);
         }
         public static GunPropDef GunProp(Thing equipment)
         {
-            return propMap.TryGetValue(equipment.def, defaultDef);
+            if (equipment?.def == null) return null;
+
+            return propMap.TryGetValue(equipment?.def, defaultDef);
         }
     }
 }

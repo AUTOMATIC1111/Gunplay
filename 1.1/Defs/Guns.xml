@@ -105,9 +105,10 @@
     </Gunplay.GunPropDef>
     
     <Gunplay.GunPropDef Name="GunplayArrow" Abstract="True">
-        <defName>Gun_SmokeLauncher</defName>
-        
-        <bow />
+        <bow>
+            <stretchHorizontal>0.45</stretchHorizontal>
+            <stretchVertical>-0.25</stretchVertical>
+        </bow>
         <projectileImpactSound>arrow</projectileImpactSound>
         <projectileImpactEffect>arrow</projectileImpactEffect>
     </Gunplay.GunPropDef>

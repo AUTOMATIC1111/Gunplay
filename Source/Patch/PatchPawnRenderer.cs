@@ -38,6 +38,7 @@ namespace Gunplay.Patch
             }
 
             GunPropDef prop = GunplaySetup.GunProp(eq);
+            if (prop == null) return true;
 
             float num = aimAngle - 90f;
             Mesh mesh;
