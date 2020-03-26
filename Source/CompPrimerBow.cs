@@ -20,7 +20,7 @@ namespace Gunplay
             float w = drawingScale.x;
             drawingScale.x *= 1f + position * props.stretchHorizontal;
             drawingScale.z *= 1f + position * props.stretchVertical;
-            drawLoc -= w * position * props.stretchHorizontal * 0.25f * dir.RotatedBy(angle);
+            drawLoc += (mesh == MeshPool.plane10 ? -1f : 1f) *  w * position * props.stretchHorizontal * 0.25f * dir.RotatedBy(angle);
 
             drawingMatrix.SetTRS(drawLoc, Quaternion.AngleAxis(angle, Vector3.up), drawingScale);
             Graphics.DrawMesh(mesh, drawingMatrix, Graphic.MatSingle, 0);
