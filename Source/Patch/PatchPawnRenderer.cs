@@ -67,28 +67,24 @@ namespace Gunplay.Patch
                 primer.Draw(mesh, drawLoc, num, drawingScale);
                 return false;
             }
+            
+            if(prop.drawScale == 1f) return true;
 
             Material mat;
-
-            CompSpinningGun spinner = eq.TryGetComp<CompSpinningGun>();
 
             Graphic_StackCount graphic_StackCount = eq.Graphic as Graphic_StackCount;
             if (graphic_StackCount != null)
             {
                 mat = graphic_StackCount.SubGraphicForStackCount(1, eq.def).MatSingle;
             }
-            else if (prop.graphicData != null)
-            {
-                mat = prop.graphicData.Graphic.MatSingle;
-            }
             else
             {
                 mat = eq.Graphic.MatSingle;
             }
 
-
             drawingMatrix.SetTRS(drawLoc, Quaternion.AngleAxis(num, Vector3.up), drawingScale);
             Graphics.DrawMesh(mesh, drawingMatrix, mat, 0);
+
             return false;
         }
 
