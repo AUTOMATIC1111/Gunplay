@@ -26,8 +26,12 @@ namespace Gunplay
                 def.DrawMatSingle.mainTexture.wrapMode = TextureWrapMode.Clamp;
             }
 
-            foreach (GunPropDef def in DefDatabase<GunPropDef>.AllDefs) {
-                ThingDef target = DefDatabase<ThingDef>.GetNamed(def.defName, false);
+            foreach (GunPropDef def in DefDatabase<GunPropDef>.AllDefs)
+            {
+                ThingDef target = null;
+
+                if (def.defTarget != null) target = DefDatabase<ThingDef>.GetNamed(def.defTarget, false);
+                if (target == null) target = DefDatabase<ThingDef>.GetNamed(def.defName, false);
                 if (target != null) propMap[target] = def;
 
                 if (def.trail == null) def.trail = defaultDef.trail;
@@ -39,11 +43,12 @@ namespace Gunplay
                     if (def.projectileImpactEffect == null) def.projectileImpactEffect = defaultDef.projectileImpactEffect;
                 }
             }
-            
+
             foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
             {
                 VerbProperties shoot = def.Verbs.FirstOrDefault(v => typeof(Verb_Shoot).IsAssignableFrom(v.verbClass));
                 if (shoot == null) continue;
+                if (!propMap.ContainsKey(def)) propMap[def] = defaultDef;
 
                 def.comps.Add(new CompProperties() { compClass = typeof(CompGun) });
 
@@ -63,13 +68,14 @@ namespace Gunplay
         {
             if (equipment == null) return null;
 
-            return propMap.TryGetValue(equipment, defaultDef);
+            return propMap.TryGetValue(equipment, null);
         }
+
         public static GunPropDef GunProp(Thing equipment)
         {
             if (equipment?.def == null) return null;
 
-            return propMap.TryGetValue(equipment?.def, defaultDef);
+            return propMap.TryGetValue(equipment.def, null);
         }
     }
 }

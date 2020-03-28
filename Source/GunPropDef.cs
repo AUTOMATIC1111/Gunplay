@@ -9,6 +9,8 @@ namespace Gunplay
 {
     public class GunPropDef : Def
     {
+        public string defTarget;
+
         public ProjectileTrailDef trail;
 
         public CompPropertiesSpinningGun spinner;

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -15,7 +16,9 @@ namespace Gunplay.Patch
     [HarmonyPatch(typeof(Projectile), "Launch", new Type[] { typeof(Thing), typeof(Vector3), typeof(LocalTargetInfo), typeof(LocalTargetInfo), typeof(ProjectileHitFlags), typeof(Thing), typeof(ThingDef) })]
     class PatchProjectileLaunch
     {
-        static void Postfix(Projectile __instance, Vector3 ___destination, ref float ___ticksToImpact, Thing launcher, ref Vector3 ___origin, LocalTargetInfo usedTarget, LocalTargetInfo intendedTarget, ProjectileHitFlags hitFlags, Thing equipment, ThingDef targetCoverDef)
+        static PropertyInfo StartingTicksToImpactProp = typeof(Projectile).GetProperty("StartingTicksToImpact", BindingFlags.NonPublic | BindingFlags.Instance);
+
+        static void Postfix(Projectile __instance, Vector3 ___destination, Thing launcher, ref Vector3 ___origin, LocalTargetInfo intendedTarget, Thing equipment, ref int ___ticksToImpact)
         {
             GunPropDef prop = GunplaySetup.GunProp(equipment);
             if (prop == null) return;
@@ -30,6 +33,8 @@ namespace Gunplay.Patch
             if (launcher as Pawn != null)
             {
                 ___origin += (___destination - ___origin).normalized * prop.barrelLength;
+                ___ticksToImpact = Mathf.CeilToInt((float) StartingTicksToImpactProp.GetValue(__instance));
+                if (___ticksToImpact < 1) ___ticksToImpact = 1;
             }
 
             if (Gunplay.settings.enableTrails)
@@ -40,12 +45,15 @@ namespace Gunplay.Patch
         }
     }
 
-    [HarmonyPatch(typeof(ProjectileProperties), "get_SpeedTilesPerTick")]
-    class PatchProjectilePropertiesSpeedTilesPerTick
+    [HarmonyPatch(typeof(Projectile), "get_StartingTicksToImpact")]
+    class PatchProjectileStartingTicksToImpact
     {
-        static float Postfix(float res)
+        static float Postfix(float value, Projectile __instance)
         {
-            return res * Gunplay.settings.projectileSpeed;
+            GunPropDef prop = GunplaySetup.GunProp(__instance.EquipmentDef);
+            if (prop == null) return value;
+
+            return value / Gunplay.settings.projectileSpeed;
         }
 
     }
