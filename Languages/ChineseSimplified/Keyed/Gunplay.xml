@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <GunplayTitle>枪战升级Gunplay</GunplayTitle>
+
+  <GunplayEnableTrailsName>启用子弹轨迹</GunplayEnableTrailsName>
+  <GunplayEnableTrailsDesc>子弹会拖出轨迹.</GunplayEnableTrailsDesc>
+  <GunplayEnableSoundsName>启用声音</GunplayEnableSoundsName>
+  <GunplayEnableSoundsDesc>改变一些武器射击和子弹碰撞的声音（可能需要重启游戏）.</GunplayEnableSoundsDesc>
+  <GunplayEnableWeaponAnimationsName>启用武器动态动画</GunplayEnableWeaponAnimationsName>
+  <GunplayEnableWeaponAnimationsDesc>1.更改部分武器贴图2.当小人使用速射机枪和弓箭一类武器射击目标时加上动画（弓箭蓄力和转轮机枪旋转）</GunplayEnableWeaponAnimationsDesc>
+  <GunplayEnableEffectsName>显示视觉效果</GunplayEnableEffectsName>
+  <GunplayEnableEffectsDesc>显示子弹击中目标的视觉效果（火花四溅等）.</GunplayEnableEffectsDesc>
+  <GunplayProjectileSpeedName>子弹速度</GunplayProjectileSpeedName>
+  <GunplayProjectileSpeedDesc>将所有子弹的速度调整到指定的百分比(默认300%)</GunplayProjectileSpeedDesc>
+
+</LanguageData>
