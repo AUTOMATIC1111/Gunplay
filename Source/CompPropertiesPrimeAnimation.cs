@@ -12,5 +12,6 @@ namespace Gunplay
         public CompPropertiesPrimeAnimation() { compClass = typeof(CompPrimeAnimation); }
 
         public List<GraphicData> frames;
+        public int ticksToIdle = 0;
     }
 }

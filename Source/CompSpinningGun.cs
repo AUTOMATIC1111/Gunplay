@@ -11,6 +11,7 @@ namespace Gunplay
     class CompSpinningGun : CompPrimer
     {
         new CompPropertiesSpinningGun props => base.props as CompPropertiesSpinningGun;
+        public override int TicksToIdle => props.ticksToIdle;
 
         float rotation = 0;
 

@@ -13,5 +13,6 @@ namespace Gunplay
 
         public List<GraphicData> frames;
         public float rotationSpeed = 1.0f;
+        public int ticksToIdle = 60;
     }
 }

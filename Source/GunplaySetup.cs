@@ -75,7 +75,7 @@ namespace Gunplay
         {
             if (equipment?.def == null) return null;
 
-            return propMap.TryGetValue(equipment.def, null);
+            return propMap.TryGetValue(equipment.def, defaultDef);
         }
     }
 }

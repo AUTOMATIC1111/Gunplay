@@ -12,7 +12,7 @@ namespace Gunplay
     {
         new CompPropertiesPrimeAnimation props => base.props as CompPropertiesPrimeAnimation;
 
-        public override int TicksToIdle => 4;
+        public override int TicksToIdle => props.ticksToIdle;
 
         public override Graphic GetGraphic(int ticksPassed)
         {

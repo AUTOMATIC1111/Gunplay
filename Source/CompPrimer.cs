@@ -86,7 +86,7 @@ namespace Gunplay
                         state = State.Idle;
                         Stance_Cooldown cooldown = stance as Stance_Cooldown;
                         if (cooldown != null)
-                            ReachPosition(0.0f, cooldown.ticksLeft);
+                            ReachPosition(0.0f, TicksToIdle);
                         else
                             ReachPosition(0.0f, 0);
                     }
