@@ -26,7 +26,6 @@ namespace Gunplay
             Scribe_Values.Look(ref projectileSpeed, "projectileSpeed");
         }
 
-
         public void DoSettingsWindowContents(Rect inRect)
         {
             Listing_Standard listing_Standard = new Listing_Standard();

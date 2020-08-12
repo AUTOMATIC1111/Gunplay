@@ -51,7 +51,7 @@ namespace Gunplay.Patch
         static float Postfix(float value, Projectile __instance)
         {
             GunPropDef prop = GunplaySetup.GunProp(__instance.EquipmentDef);
-            if (prop == null) return value;
+            if (prop == null || prop.preserveSpeed) return value;
 
             return value / Gunplay.settings.projectileSpeed;
         }

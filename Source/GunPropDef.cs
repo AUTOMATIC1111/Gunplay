@@ -24,6 +24,8 @@ namespace Gunplay
 
         public float drawScale = 1;
 
+        public bool preserveSpeed = false;
+
         public ProjectileImpactSoundDef projectileImpactSound;
         public ProjectileImpactEffectDef projectileImpactEffect;
     }

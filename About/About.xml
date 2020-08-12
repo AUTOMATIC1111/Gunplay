@@ -2,7 +2,7 @@
 <ModMetaData>
 	<name>Gunplay</name>
 	<author>AUTOMATIC</author>
-	<supportedVersions><li>1.1</li></supportedVersions>
+	<supportedVersions><li>1.1</li><li>1.2</li></supportedVersions>
 	<packageId>automatic.gunplay</packageId>
 	<description><![CDATA[Adds more cinematic effects to ranged weapons:
 - long trails for projectiles
