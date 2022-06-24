@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <Gunplay.ProjectileImpactSoundDef>
+        <defName>arrow</defName>
+        
+        <fabric>GunplayArrowFabric</fabric>
+        <flesh>GunplayArrowFlesh</flesh>
+        <metal>GunplayArrowMetal</metal>
+        <soil>GunplayArrowSoil</soil>
+        <stone>GunplayArrowStone</stone>
+        <wood>GunplayArrowWood</wood>
+    </Gunplay.ProjectileImpactSoundDef>
+    
+    <Gunplay.ProjectileImpactEffectDef>
+        <defName>generic</defName>
+        
+        <fabric>DamageDiminished_General</fabric>
+        <metal>GunplayImpactMetal</metal>
+        <soil>GunplayImpactSoil</soil>
+        <stone>DamageDiminished_General</stone>
+        <wood>GunplayImpactWood</wood>
+    </Gunplay.ProjectileImpactEffectDef>
+
+    <Gunplay.ProjectileImpactEffectDef>
+        <defName>arrow</defName>
+        
+        <fabric>GunplayImpactSoilArrow</fabric>
+        <metal>GunplayImpactMetalArrow</metal>
+        <soil>GunplayImpactSoilArrow</soil>
+        <stone>GunplayImpactStoneArrow</stone>
+        <wood>GunplayImpactSoilArrow</wood>
+    </Gunplay.ProjectileImpactEffectDef>
+
+    <Gunplay.GunPropDef>
+        <defName>default</defName>
+    
+        <trail>default</trail>
+        <barrelLength>1.5</barrelLength>
+        <projectileImpactEffect>generic</projectileImpactEffect>
+    </Gunplay.GunPropDef>
+
+    <Gunplay.GunPropDef>
+        <defName>Gun_Minigun</defName>
+    
+        <spinner>
+            <frames>
+                <li><texPath>Gunplay/Weapons/Minigun-0</texPath><graphicClass>Graphic_Single</graphicClass></li>
+                <li><texPath>Gunplay/Weapons/Minigun-1</texPath><graphicClass>Graphic_Single</graphicClass></li>
+                <li><texPath>Gunplay/Weapons/Minigun-2</texPath><graphicClass>Graphic_Single</graphicClass></li>
+                <li><texPath>Gunplay/Weapons/Minigun-3</texPath><graphicClass>Graphic_Single</graphicClass></li>
+                <li><texPath>Gunplay/Weapons/Minigun-4</texPath><graphicClass>Graphic_Single</graphicClass></li>
+                <li><texPath>Gunplay/Weapons/Minigun-5</texPath><graphicClass>Graphic_Single</graphicClass></li>
+            </frames>
+            
+            <rotationSpeed>1.2</rotationSpeed>
+        </spinner>
+        
+        <drawScale>1.4</drawScale>
+        
+        <soundAiming>GunplayMinigunSpinup</soundAiming>
+    </Gunplay.GunPropDef>
+    
+    
+    <Gunplay.GunPropDef>
+        <defName>Gun_ChargeRifle</defName>
+        
+        <trail>charge</trail>
+    </Gunplay.GunPropDef>
+    
+    <Gunplay.GunPropDef>
+        <defName>Gun_ChargeLance</defName>
+        
+        <trail>charge</trail>
+    </Gunplay.GunPropDef>
+    
+    <Gunplay.GunPropDef>
+        <defName>Gun_ChargeBlasterHeavy</defName>
+        
+        <trail>charge</trail>
+    </Gunplay.GunPropDef>
+
+    <Gunplay.GunPropDef>
+        <defName>Gun_IncendiaryLauncher</defName>
+        
+        <preserveSpeed>true</preserveSpeed>
+        <trail>incendiary</trail>
+    </Gunplay.GunPropDef>
+    
+    
+    <Gunplay.GunPropDef>
+        <defName>Gun_SmokeLauncher</defName>
+        
+        <trail>medium</trail>
+    </Gunplay.GunPropDef>
+    
+    <Gunplay.GunPropDef>
+        <defName>Gun_PumpShotgun</defName>
+        
+        <trail>wide</trail>
+    </Gunplay.GunPropDef>
+    
+    <Gunplay.GunPropDef>
+        <defName>Gun_ChainShotgun</defName>
+        
+        <trail>wide</trail>
+    </Gunplay.GunPropDef>
+    
+    <Gunplay.GunPropDef Name="GunplayArrow" Abstract="True">
+        <bow>
+            <stretchHorizontal>0.45</stretchHorizontal>
+            <stretchVertical>-0.25</stretchVertical>
+        </bow>
+        <projectileImpactSound>arrow</projectileImpactSound>
+        <projectileImpactEffect>arrow</projectileImpactEffect>
+    </Gunplay.GunPropDef>
+    
+    <Gunplay.GunPropDef ParentName="GunplayArrow">
+        <defName>Bow_Recurve</defName>
+    </Gunplay.GunPropDef>
+    
+    <Gunplay.GunPropDef ParentName="GunplayArrow">
+        <defName>Bow_Short</defName>
+    </Gunplay.GunPropDef>
+    
+    <Gunplay.GunPropDef ParentName="GunplayArrow">
+        <defName>Bow_Great</defName>
+        
+        <drawScale>1.6</drawScale>
+        
+        <bow>
+             <graphicData><texPath>Gunplay/Weapons/Greatbow-0</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+        </bow>
+        
+        <soundAiming>GunplayGreatbowDraw</soundAiming>
+        <soundCast>GunplayGreatbowRelease</soundCast>
+    </Gunplay.GunPropDef>
+</Defs>

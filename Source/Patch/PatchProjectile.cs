@@ -13,7 +13,7 @@ namespace Gunplay.Patch
 {
 
 
-    [HarmonyPatch(typeof(Projectile), "Launch", new Type[] { typeof(Thing), typeof(Vector3), typeof(LocalTargetInfo), typeof(LocalTargetInfo), typeof(ProjectileHitFlags), typeof(Thing), typeof(ThingDef) })]
+    [HarmonyPatch(typeof(Projectile), "Launch", new Type[] { typeof(Thing), typeof(Vector3), typeof(LocalTargetInfo), typeof(LocalTargetInfo), typeof(ProjectileHitFlags), typeof(bool), typeof(Thing), typeof(ThingDef) })]
     class PatchProjectileLaunch
     {
         static PropertyInfo StartingTicksToImpactProp = typeof(Projectile).GetProperty("StartingTicksToImpact", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -37,7 +37,7 @@ namespace Gunplay.Patch
                 if (___ticksToImpact < 1) ___ticksToImpact = 1;
             }
 
-            if (Gunplay.settings.enableTrails)
+            if (Gunplay.settings.enableTrails && launcher?.Map!=null)
             {
                 ProjectileTrail trail = GenSpawn.Spawn(prop.trail, ___origin.ToIntVec3(), launcher.Map, WipeMode.Vanish) as ProjectileTrail;
                 trail.Initialize(__instance, ___destination, equipment);
