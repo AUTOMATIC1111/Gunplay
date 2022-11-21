@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <EffecterDef Name="GunplayImpact" Abstract="True">
+    <offsetTowardsTarget>0.31~0.31</offsetTowardsTarget>
+    <positionRadius>0.1</positionRadius>
+  </EffecterDef>
+
+  <EffecterDef Name="GunplayImpactSoil" ParentName="GunplayImpact">
+    <defName>GunplayImpactSoil</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>0.2</positionRadius>
+        <fleckDef>DustPuff</fleckDef>
+        <burstCount>2~3</burstCount>
+        <speed>0.3~0.7</speed>
+        <scale>0.5~0.8</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>0.2</positionRadius>
+        <fleckDef>DustPuffThick</fleckDef>
+        <burstCount>1~2</burstCount>
+        <speed>0.3~0.7</speed>
+        <scale>0.5~0.8</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_SparkThrown</moteDef>
+        <burstCount>3~3</burstCount>
+        <scale>0.1~0.2</scale>
+        <airTime>0.08~0.1</airTime>
+        <speed>2~4</speed>
+        <positionRadius>0.02</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+  <EffecterDef ParentName="GunplayImpactSoil">
+    <defName>GunplayImpactSoilArrow</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>GunplayMoteArrowStuck</fleckDef>
+        <burstCount>1~1</burstCount>
+        <scale>1</scale>
+        <speed>0</speed>
+        <angle>0</angle>
+        <rotation>180</rotation>
+        
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+  <EffecterDef ParentName="GunplayImpactSoil">
+    <defName>GunplayImpactWood</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>GunplayWoodDebrisA</fleckDef>
+        <burstCount>0~2</burstCount>
+        <scale>0.12~0.24</scale>
+        <speed>0.5~1.5</speed>
+        <angle>-45~45</angle>
+        <positionRadius>0.01</positionRadius>
+        <rotationRate>-720~720</rotationRate>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>GunplayWoodDebrisB</fleckDef>
+        <burstCount>0~2</burstCount>
+        <scale>0.12~0.24</scale>
+        <speed>0.5~1.5</speed>
+        <angle>-45~45</angle>
+        <positionRadius>0.01</positionRadius>
+        <rotationRate>-720~720</rotationRate>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>GunplayWoodDebrisC</fleckDef>
+        <burstCount>0~2</burstCount>
+        <scale>0.12~0.24</scale>
+        <speed>0.5~1.5</speed>
+        <angle>-45~45</angle>
+        <positionRadius>0.01</positionRadius>
+        <rotationRate>-720~720</rotationRate>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>GunplayWoodDebrisD</fleckDef>
+        <burstCount>0~2</burstCount>
+        <scale>0.12~0.24</scale>
+        <speed>0.5~1.5</speed>
+        <angle>-45~45</angle>
+        <positionRadius>0.01</positionRadius>
+        <rotationRate>-720~720</rotationRate>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+  
+  <EffecterDef Name="GunplayImpactMetal" ParentName="GunplayImpact">
+    <defName>GunplayImpactMetal</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>0.2</positionRadius>
+        <fleckDef>AirPuff</fleckDef>
+        <burstCount>3~4</burstCount>
+        <speed>0.3~0.7</speed>
+        <scale>0.5~0.8</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>0.02</positionRadius>
+        <moteDef>Mote_SparkThrownFast</moteDef>
+        <burstCount>4~5</burstCount>
+        <speed>3.3~5</speed>
+        <scale>0.1~0.2</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>0.02</positionRadius>
+        <fleckDef>MicroSparksFast</fleckDef>
+        <burstCount>1~2</burstCount>
+        <speed>0.3~0.4</speed>
+        <rotationRate>5~10</rotationRate>
+        <scale>0.3~0.5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_SparkThrown</moteDef>
+        <burstCount>3~3</burstCount>
+        <scale>0.1~0.2</scale>
+        <airTime>0.08~0.1</airTime>
+        <speed>2~4</speed>
+        <positionRadius>0.02</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+    <offsetTowardsTarget>0.31~0.31</offsetTowardsTarget>
+    <positionRadius>0.1</positionRadius>
+  </EffecterDef>
+
+  <EffecterDef ParentName="GunplayImpactMetal">
+    <defName>GunplayImpactMetalArrow</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>GunplayMoteArrowSpinning</fleckDef>
+        <burstCount>1~1</burstCount>
+        <scale>1</scale>
+        <speed>2~8</speed>
+        <angle>-30~30</angle>
+        <positionRadius>0.01</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <rotationRate>-1800~1800</rotationRate>
+      </li>
+    </children>
+  </EffecterDef>
+  
+  <EffecterDef ParentName="GunplayImpactMetal">
+    <defName>GunplayImpactStoneArrow</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>GunplayMoteArrowSpinningShortlived</fleckDef>
+        <burstCount>1</burstCount>
+        <scale>1</scale>
+        <speed>1~2</speed>
+        <angle>-90~90</angle>
+        <positionRadius>0.01</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <rotationRate>-720~720</rotationRate>
+      </li>
+    </children>
+  </EffecterDef>
+  
+
+</Defs>

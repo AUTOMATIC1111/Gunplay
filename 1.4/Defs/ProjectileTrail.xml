@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <Gunplay.ProjectileTrailDef Name="GunplayProjectileTrailDefault">
+    <defName>default</defName>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <thingClass>Gunplay.ProjectileTrail</thingClass>
+    <label>projectile trail</label>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    
+    <graphicData>
+      <shaderType>Mote</shaderType>
+      <texPath>Gunplay/Effects/Guntrail</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </Gunplay.ProjectileTrailDef>
+  
+  <Gunplay.ProjectileTrailDef ParentName="GunplayProjectileTrailDefault">
+    <defName>charge</defName>
+
+    <graphicData>
+      <shaderType>Mote</shaderType>
+      <texPath>Gunplay/Effects/GuntrailCharge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </Gunplay.ProjectileTrailDef>
+
+  <Gunplay.ProjectileTrailDef ParentName="GunplayProjectileTrailDefault">
+    <defName>incendiary</defName>
+
+    <graphicData>
+      <shaderType>Mote</shaderType>
+      <texPath>Gunplay/Effects/GuntrailIncendiary</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    
+    <trailWidth>0.15</trailWidth>
+  </Gunplay.ProjectileTrailDef>
+
+
+  
+  <Gunplay.ProjectileTrailDef ParentName="GunplayProjectileTrailDefault">
+    <defName>medium</defName>
+    
+    <trailWidth>0.15</trailWidth>
+  </Gunplay.ProjectileTrailDef>
+  
+  <Gunplay.ProjectileTrailDef ParentName="GunplayProjectileTrailDefault">
+    <defName>wide</defName>
+    
+    <trailWidth>0.25</trailWidth>
+  </Gunplay.ProjectileTrailDef>
+
+</Defs>

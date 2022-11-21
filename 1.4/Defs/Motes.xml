@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FleckDef Name="GunplayMoteBase" Abstract="True">
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+  </FleckDef>
+
+  <FleckDef Name="GunplayMoteArrowSpinning" ParentName="GunplayMoteBase">
+    <defName>GunplayMoteArrowSpinning</defName>
+    <graphicData>
+      <texPath>Gunplay/Effects/Arrow</texPath>
+    </graphicData>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>0.15</solidTime>
+    <fadeOutTime>0.55</fadeOutTime>
+    <collide>true</collide>
+  </FleckDef>
+  
+  <FleckDef ParentName="GunplayMoteArrowSpinning">
+    <defName>GunplayMoteArrowSpinningShortlived</defName>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="GunplayMoteBase">
+    <defName>GunplayMoteArrowStuck</defName>
+    <graphicData>
+      <texPath>Gunplay/Effects/Arrow</texPath>
+    </graphicData>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>2.0</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+  </FleckDef>
+  
+  <FleckDef ParentName="GunplayMoteBase">
+    <defName>GunplayWoodDebrisA</defName>
+    <graphicData><texPath>Gunplay/Effects/WoodDebris/1</texPath></graphicData>
+    <fadeInTime>0.02</fadeInTime><solidTime>0.25</solidTime><fadeOutTime>0.15</fadeOutTime>
+  </FleckDef>
+  
+  <FleckDef ParentName="GunplayMoteBase">
+    <defName>GunplayWoodDebrisB</defName>
+    <graphicData><texPath>Gunplay/Effects/WoodDebris/2</texPath></graphicData>
+    <fadeInTime>0.02</fadeInTime><solidTime>0.25</solidTime><fadeOutTime>0.15</fadeOutTime>
+  </FleckDef>
+  
+  <FleckDef ParentName="GunplayMoteBase">
+    <defName>GunplayWoodDebrisC</defName>
+    <graphicData><texPath>Gunplay/Effects/WoodDebris/3</texPath></graphicData>
+    <fadeInTime>0.02</fadeInTime><solidTime>0.25</solidTime><fadeOutTime>0.15</fadeOutTime>
+  </FleckDef>
+  
+  <FleckDef ParentName="GunplayMoteBase">
+    <defName>GunplayWoodDebrisD</defName>
+    <graphicData><texPath>Gunplay/Effects/WoodDebris/4</texPath></graphicData>
+    <fadeInTime>0.02</fadeInTime><solidTime>0.25</solidTime><fadeOutTime>0.15</fadeOutTime>
+  </FleckDef>
+  
+</Defs>
