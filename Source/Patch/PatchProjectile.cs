@@ -27,6 +27,9 @@ namespace Gunplay.Patch
             if (comp != null)
             {
                 float angle = (___destination - ___origin).AngleFlat() - (intendedTarget.CenterVector3 - ___origin).AngleFlat();
+                if (angle < -180) {
+                    angle += 360;
+                }
                 comp.RotationOffset = (angle + 180) % 360 - 180;
             }
 

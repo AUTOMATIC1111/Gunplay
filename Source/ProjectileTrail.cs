@@ -96,7 +96,7 @@ namespace Gunplay
                 Destroy(DestroyMode.Vanish);
         }
 
-        public override void Draw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             float traveled = (a - exactPosition).magnitude;
             float len;

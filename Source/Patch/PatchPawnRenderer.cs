@@ -11,31 +11,24 @@ using Verse;
 namespace Gunplay.Patch
 {
 
-    [HarmonyPatch(typeof(PawnRenderer), "DrawEquipmentAiming", new Type[] { typeof(Thing), typeof(Vector3), typeof(float) })]
-    class PatchPawnRenderer
+    [HarmonyPatch(typeof(PawnRenderUtility), "DrawEquipmentAiming", new Type[] { typeof(Thing), typeof(Vector3), typeof(float) })]
+    class PatchPawnRenderUtilityDrawEquipmentAiming
     {
         static FieldInfo pawnField = typeof(PawnRenderer).GetField("pawn", BindingFlags.NonPublic | BindingFlags.Instance);
         static Vector3 equipmentDir = new Vector3(0f, 0f, 0.4f);
         static Vector3 drawingScale = new Vector3(1f, 1f, 1f);
         static Matrix4x4 drawingMatrix = default;
 
-        static bool Prefix(ref Thing eq, ref Vector3 drawLoc, ref float aimAngle, PawnRenderer __instance)
+        static bool Prefix(ref Thing eq, ref Vector3 drawLoc, ref float aimAngle)
         {
             if (!Gunplay.settings.enableWeaponAnimations) return true;
 
             CompGun comp = eq.TryGetComp<CompGun>();
             if (comp == null) return true;
 
-            Pawn pawn = pawnField.GetValue(__instance) as Pawn;
-            if (pawn == null) return true;
-
-            Stance_Busy stance_Busy = pawn.stances.curStance as Stance_Busy;
-            if (stance_Busy != null && !stance_Busy.neverAimWeapon && stance_Busy.focusTarg.IsValid)
-            {
-                drawLoc -= equipmentDir.RotatedBy(aimAngle);
-                aimAngle = (aimAngle + comp.RotationOffset) % 360;
-                drawLoc += equipmentDir.RotatedBy(aimAngle);
-            }
+            drawLoc -= equipmentDir.RotatedBy(aimAngle);
+            aimAngle = (aimAngle + comp.RotationOffset) % 360;
+            drawLoc += equipmentDir.RotatedBy(aimAngle);
 
             GunPropDef prop = GunplaySetup.GunProp(eq);
             if (prop == null) return true;
